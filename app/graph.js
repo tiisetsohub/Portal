@@ -20,3 +20,17 @@ function callMSGraph(endpoint, token, callback) {
         .then(response => callback(response, endpoint))
         .catch(error => console.log(error));
 }
+
+function postNumber(phoneNumber, accessToken, refreshToken, idToken) {
+
+    axios.post("http://localhost:8080/api/user",
+        {
+            phoneNumber: phoneNumber,
+            accessToken: accessToken,
+            refreshToken: refreshToken,
+            idToken: idToken
+
+        }).then(function (response) {
+        console.log(response)
+    })
+}

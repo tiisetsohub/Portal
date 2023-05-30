@@ -20,7 +20,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">Microsoft identity platform</a>
+        <a class="navbar-brand" href="/">Entelect</a>
         <div class="btn-group ml-auto dropleft">
             <button type="button" id="SignIn" class="btn btn-secondary" onclick="signIn()">
                 Sign In
@@ -28,21 +28,23 @@
         </div>
     </nav>
     <br>
-    <h5 class="card-header text-center">Vanilla JavaScript SPA calling MS Graph API with MSAL.js</h5>
+    <h5 class="card-header text-center">Entelect whatsapp bot portal</h5>
     <br>
     <div class="row" style="margin:auto">
         <div id="card-div" class="col-md-3" style="display:none">
             <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title" id="WelcomeMessage">Please sign-in to see your profile and read your mails
-                    </h5>
-                    <div id="profile-div"></div>
+                    <h5 class="card-title" id="WelcomeMessage">Please sign-in to register your whatsapp numbers</h5>
+                    <!-- <div id="profile-div"></div>
                     <br>
                     <br>
                     <button class="btn btn-primary" id="seeProfile" onclick="seeProfile()">See Profile</button>
                     <br>
                     <br>
                     <button class="btn btn-primary" id="readMail" onclick="readMail()">Read Mails</button>
+                    <br>
+                    <br> -->
+                    <button class="btn btn-primary" id="test" onclick="addNumber()">Test</button>
                 </div>
             </div>
         </div>
@@ -70,6 +72,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
 
     <!-- importing app scripts (load order is important) -->
     <script type="text/javascript" src="./authConfig.js"></script>
@@ -77,8 +80,6 @@
     <script type="text/javascript" src="./ui.js"></script>
 
     <script type="text/javascript" src="./authRedirect.js"></script>  
-    <!-- uncomment the above line and comment the line below if you would like to use the redirect flow -->
-    <!-- <script type="text/javascript" src="./authPopup.js"></script> -->
     <script type="text/javascript" src="./graph.js"></script>
 </body>
 

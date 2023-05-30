@@ -30,7 +30,7 @@ function selectAccount() {
         // Add your account choosing logic here
         console.warn("Multiple accounts detected.");
     } else if (currentAccounts.length === 1) {
-        username = currentAccounts[0].username;
+        username = currentAccounts[0].name;
         showWelcomeMessage(username);
     }
 }
@@ -91,7 +91,7 @@ function getTokenRedirect(request) {
 function seeProfile() {
     getTokenRedirect(loginRequest)
         .then(response => {
-            console.log(response.account);
+            // console.log(response);
             callMSGraph(graphConfig.graphMeEndpoint, response.accessToken, updateUI);
         }).catch(error => {
             console.error(error);
@@ -101,9 +101,16 @@ function seeProfile() {
 function readMail() {
     getTokenRedirect(tokenRequest)
         .then(response => {
-            //console.log(response);
             callMSGraph(graphConfig.graphMailEndpoint, response.accessToken, updateUI);
         }).catch(error => {
             console.error(error);
         });
+}
+
+function addNumber(){
+    const phoneNumber = "27838599234";
+    const accessToken = JSON.parse(localStorage.getItem('b708298f-d7eb-44d2-83c9-a5528f128976.e3183c89-78ae-43e0-b8a3-3eb012e5d9ea-login.windows.net-accesstoken-6bceffdb-261e-446a-8aed-a20b6cc775d0-e3183c89-78ae-43e0-b8a3-3eb012e5d9ea-mail.read openid profile user.read email--')).secret;
+    const refreshToken = JSON.parse(localStorage.getItem('b708298f-d7eb-44d2-83c9-a5528f128976.e3183c89-78ae-43e0-b8a3-3eb012e5d9ea-login.windows.net-refreshtoken-6bceffdb-261e-446a-8aed-a20b6cc775d0----')).secret;
+    const idToken = JSON.parse(localStorage.getItem('b708298f-d7eb-44d2-83c9-a5528f128976.e3183c89-78ae-43e0-b8a3-3eb012e5d9ea-login.windows.net-idtoken-6bceffdb-261e-446a-8aed-a20b6cc775d0-e3183c89-78ae-43e0-b8a3-3eb012e5d9ea---')).secret;
+    postNumber(phoneNumber, accessToken, refreshToken, idToken);
 }
